@@ -1,11 +1,9 @@
-# Py-VOIP
-Python VOIP - (Voice Over IP)
-<p>This small project allows users to communicate through voice over the internet, upcoming features will be:</p>
-<li>Messaging</li>
-<li>User Accounts</li>
-<li>Preferences</li>
-<li>Chunk/Quality settings</li>
+Py-VOIP
 
-##Req: 
-<li>Python 2.7</li>
-<li>PyAudio</li>
+Python VOIP - (Voice Over IP)
+    - Implementação utilizando exemplo prático da biblioteca PyAudio
+      http://sharewebegin.blogspot.com/2013/06/real-time-voice-chat-example-in-python.html
+
+Requisitos: 
+- Python 2.7
+- PyAudio
