@@ -5,5 +5,5 @@ Chat de voz feito usando o exemplo prático da biblioteca PyAudio.
 
 # Requisitos
   
-  Python 2.7
-  PyAudio 0.2.11.1build2
+  - Python 2.7
+  - PyAudio 0.2.11.1build2
