@@ -8,6 +8,11 @@ Chat de voz criado através do exemplo prático da biblioteca PyAudio.
   - Python 2.7
   - PyAudio 0.2.11.1build2
   
+## Criando ambiente no conda
+
+   - conda create -n [nome_do_ambiente]
+   - source activate [nome_do_ambiente]
+
 ## Resolvendo erro no Conda
    
    - conda install nwani::portaudio nwani::pyaudio
