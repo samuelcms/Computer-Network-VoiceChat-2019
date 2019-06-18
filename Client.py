@@ -3,44 +3,40 @@
 import socket
 import pyaudio
 import wave
+import os
 
 # Inicializando os parâmetros da biblioteca pyaudio.
 
 CHUNK = 1024 # Número de quadros no buffer.
 FORMAT = pyaudio.paInt16
-CHANNELS = 1 # Número de amostras coletadas por segundo.
-RATE = 44100
+CHANNELS = 1 # Cada quadro tem 1 amostra ("CHANNELS = 1)
+RATE = 30000 # # Número de amostras coletadas por segundo.
 
-# RECORD_SECONDS = 40
+# Inicializando sockets.
+Servidor = '127.0.0.1'
+PortaServidor = 16000
+clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+clientSocket.connect((Servidor, PortaServidor))
 
-HOST = '127.0.0.1'
-PORT = 50007
+voz = pyaudio.PyAudio()
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect((HOST, PORT))
+stream = voz.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
 
-p = pyaudio.PyAudio()
-
-stream = p.open(format=FORMAT,
-                channels=CHANNELS,
-                rate=RATE,
-                input=True,
-                frames_per_buffer=CHUNK)
-
-print("*Gravando")
-
+# - Criar threading para gerenciar conexao e fechamento - 
+os.system('clear')
+print("\n\t*Gravando*n\n")
+print("Para interromper a ligação, pressione Ctrl + C.")
 frames = []
 
-while 1: #for i in range(0, int(RATE/CHUNK*RECORD_SECONDS)):
-
- data  = stream.read(CHUNK)
- frames.append(data)
- s.sendall(data)
-
+# Envia audio enquanto a chamada não for finalizada.
+while  1:
+    data  = stream.read(CHUNK)
+    frames.append(data)
+    clientSocket.sendall(data)
 
 stream.stop_stream()
 stream.close()
-p.terminate()
-s.close()
+voz.terminate()
+clientSocket.close()
 
 print("Conexão fechada.")
