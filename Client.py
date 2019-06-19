@@ -10,11 +10,11 @@ import os
 CHUNK = 1024 # Número de quadros no buffer.
 FORMAT = pyaudio.paInt16
 CHANNELS = 1 # Cada quadro tem 1 amostra ("CHANNELS = 1)
-RATE = 30000 # # Número de amostras coletadas por segundo.
+RATE = 52250 # # Número de amostras coletadas por segundo.
 
 # Inicializando sockets.
 Servidor = '127.0.0.1'
-PortaServidor = 16000
+PortaServidor = 22000
 clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 clientSocket.connect((Servidor, PortaServidor))
 
