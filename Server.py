@@ -35,28 +35,12 @@ data = conn.recv(CHUNK) #Dados
 
 i=1
 while data != '': #Enquanto os dados forem diferentes de NULL.
-    data = conn.recv(CHUNK)
-    
-    silence = 0
-
-    
-
-    stream.write(data)
-    frames.append(data)
-    i = i+1
-    print(i)
-    #os.system('clear')
-
-'''
-i=1
-while data != '': #Enquanto os dados forem diferentes de NULL.
     stream.write(data)
     data = conn.recv(1024)
     frames.append(data)
     i = i+1
     print(i)
     #os.system('clear')
- '''   
  
 stream.stop_stream()
 stream.close()
