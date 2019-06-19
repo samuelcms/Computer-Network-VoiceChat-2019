@@ -1,3 +1,5 @@
+#https://pt.stackoverflow.com/questions/371133/como-encerrar-um-script-com-threads-em-python
+
 #A thread vai ser executada enquanto o atributo self.kill não estiver 'set'
 
 import threading
@@ -36,6 +38,7 @@ class Thread(threading.Thread):
 if __name__ == "__main__":
     start()
 
+# Exemplo de thread usando threading (aula).
 '''
 #Tread com Threading
 
