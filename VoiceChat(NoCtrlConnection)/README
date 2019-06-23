@@ -1,0 +1,2 @@
+Cliente e servidor funcionam. Servidor apresenta problema pois não consegue encerrar a Thread, isso causa 
+uso extremo da CPU e, consequentemente, da memória RAM.
