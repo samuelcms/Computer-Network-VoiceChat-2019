@@ -1,0 +1,2 @@
+Tentativa de implementação do servidor e cliente com o controle de fechamento de conexão no servidor através do 
+envio do flag '-1' pelo cliente. (NÂO FUNCIONAL)
