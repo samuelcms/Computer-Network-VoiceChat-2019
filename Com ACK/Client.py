@@ -11,6 +11,9 @@ opcao = '1'
 def getchar():
     global opcao
     opcao = str(input())
+    while opcao != '0':
+        print("Opção inválida, por favor pressione 0 e tecle ENTER.")
+        opcao = str(input())
     
 getch = threading.Thread(target=getchar)
 getch.start()
@@ -66,3 +69,4 @@ ctrl_skt.close()
 
 end = datetime.now() # Hora de finalização da chamada.
 print("Chamada encerrada em {}".format(end))
+
