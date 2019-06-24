@@ -6,7 +6,7 @@ import pyaudio
 import socket
 import os
 
-opcao = 1
+opcao = '1'
 
 def getchar():
     global opcao
