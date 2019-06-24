@@ -17,9 +17,6 @@ RATE = 52000                # Número de amostras coletadas por segundo.
 WIDTH = 2
 frames = []
 
-voz = pyaudio.PyAudio()       # Configura o sistema de "portaudio".
-stream = voz.open(format=voz.get_format_from_width(WIDTH), channels=CHANNELS, rate=RATE, output=True, frames_per_buffer=CHUNK)
-
 # Criando conexão de dados.
 
 HOST = ''                 
@@ -36,6 +33,10 @@ ctrl.bind((HOST, CTRL_PORT))
 ctrl.listen(1)
 
 def conexao(conn, addr, ctrl, addr2):  
+    
+    voz = pyaudio.PyAudio()       # Configura o sistema de "portaudio".
+    stream = voz.open(format=voz.get_format_from_width(WIDTH), channels=CHANNELS, rate=RATE, output=True, frames_per_buffer=CHUNK)
+
     #os.system('clear')
     print ('Conexão vinda de:', addr)
     data = conn.recv(CHUNK) #Dados
