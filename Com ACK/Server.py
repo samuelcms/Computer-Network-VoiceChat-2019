@@ -15,7 +15,6 @@ FORMAT = pyaudio.paInt16    # Formato das amostras de áudio.
 CHANNELS = 1                # Cada quadro tem 1 amostra ("CHANNELS = 1)".
 RATE = 52000                # Número de amostras coletadas por segundo.
 WIDTH = 2
-frames = []
 
 # Criando conexão de dados.
 
@@ -48,7 +47,6 @@ def conexao(conn, addr, ctrl, addr2):
     while data != '' and flag == '1':   
         stream.write(data)
         data = conn.recv(CHUNK)
-        frames.append(data)
         
         aux = ctrl.recv(1)          # Recebimento do status de conexão.
         flag = aux.decode('utf-8')
