@@ -46,7 +46,6 @@ stream = voz.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frame
 #os.system('clear')
 print("\n\tChamada em execução...\n")
 print("Para interromper a chamada, pressione 0 e tecle ENTER.")
-frames = []
 
 flag = '1' # Indica o estado da conexão.
 
