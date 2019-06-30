@@ -5,13 +5,14 @@ Chat de voz criado através do exemplo prático da biblioteca PyAudio.
 
 Documentação PyAudio:
    - https://people.csail.mit.edu/hubert/pyaudio/docs/
+   
 
 ### Requisitos
   
   - Python 2.7+
   - PyAudio 0.2.11.1build2+
 
-# Informações Úteis
+# Configurando ambiente para o trabalho (LabRedes)
 
 ### Criando ambiente no conda
 
@@ -22,6 +23,8 @@ Documentação PyAudio:
 ### Instalando pacotes com o conda
    
    - conda install [nome_do_pacote]
+      - conda install python3.6
+      - conda install pyaudio
 
 ### Resolvendo erro no Conda
    
