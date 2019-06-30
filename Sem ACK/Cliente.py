@@ -25,7 +25,6 @@ voz = pyaudio.PyAudio()     # Configura o sistema de "portaudio".
 stream = voz.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
 
 print("\n\tChamada em execução...\n")
-frames = []
 
 def start():    
     
@@ -51,7 +50,6 @@ class Thread(threading.Thread):
     def run(self): 
         while not self.kill.is_set():       # Envia audio enquanto a (chamada não for finalizada) thread não estiver 'morta'. 
             data  = stream.read(CHUNK)
-            frames.append(data)
             clientSocket.sendall(data)
         
         stream.stop_stream()
