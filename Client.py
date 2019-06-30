@@ -25,12 +25,10 @@ stream = voz.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frame
 os.system('clear')
 print("\n\t*Gravando*n\n")
 print("Para interromper a ligação, pressione Ctrl + C.")
-frames = []
 
 # Envia audio enquanto a chamada não for finalizada.
 while  1:
     data  = stream.read(CHUNK)
-    frames.append(data)
     clientSocket.sendall(data)
 
 stream.stop_stream()
