@@ -12,7 +12,6 @@ CHUNK = 2048 * 5    # Número de quadros no buffer.
 CHANNELS = 1        # Cada quadro tem 1 amostra ("CHANNELS = 1)".
 RATE = 52250        # Número de amostras coletadas por segundo.
 WIDTH = 2
-frames = []
 
 p = pyaudio.PyAudio()   # Configura o sistema de "portaudio".
 
@@ -36,7 +35,6 @@ contador = 1    # Conta as interações.
 while data != '':       # Enquanto os dados forem diferentes de NULL.
     stream.write(data)
     data = conn.recv(CHUNK)
-    frames.append(data)
     #contador = contador + 1
     #print(contador)
     #os.system('clear')
