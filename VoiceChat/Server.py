@@ -38,6 +38,7 @@ def conexao(conn, addr, ctrl, addr2):
 
     os.system('clear')
     print ('Conexão vinda de:', addr)
+    
     data = conn.recv(CHUNK)         # Dados
 
     status = '1'                    # Indica o estado da conexão.
@@ -62,13 +63,9 @@ def conexao(conn, addr, ctrl, addr2):
 
     end = str(datetime.now())                        
     aux = end.split(' ')
-    data = aux[0]
-    hora = aux[1]
-    data = data.split('-')
-    hora = hora.split('.')
-    end = "{}/{}/{} | {}".format(data[2],data[1],data[0],hora[0])
-    os.system('clear')
-    print(f"Chamada encerrada em: {end}\n\n")
+    data = aux[0].split('-')
+    hora = aux[1].split('.')
+    print(f"Chamada encerrada em: {data[2]}/{data[1]}/{data[0]} | {hora[0]}")
 
     
 def main():

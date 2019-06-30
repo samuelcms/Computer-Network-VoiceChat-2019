@@ -73,10 +73,8 @@ ctrl_skt.close()
 
 end = str(datetime.now())                        
 aux = end.split(' ')
-data = aux[0]
-hora = aux[1]
-data = data.split('-')
-hora = hora.split('.')
-end = "{}/{}/{} | {}".format(data[2],data[1],data[0],hora[0])
+data = aux[0].split('-')
+hora = aux[1].split('.')
+#end = "{}/{}/{} | {}".format(data[2],data[1],data[0],hora[0])
 os.system('clear')
-print(f"\n\n\tChamada encerrada em: {end}\n\n")
+print(f"\n\n\tChamada encerrada em: {data[2]}/{data[1]}/{data[0]} | {hora[0]}\n\n")
