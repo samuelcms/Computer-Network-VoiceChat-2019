@@ -26,6 +26,6 @@ Documentação PyAudio:
       - conda install python3.6
       - conda install pyaudio
 
-#### Resolvendo erro no Conda
+#### Resolvendo conflito PyAudio no Conda
    
    - conda install nwani::portaudio nwani::pyaudio
