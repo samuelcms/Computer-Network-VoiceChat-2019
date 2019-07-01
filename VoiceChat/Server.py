@@ -51,8 +51,6 @@ def conexao(conn, addr, ctrl, addr2):
         aux = ctrl.recv(1)          # Recebimento do status de conexão.
         status = aux.decode('utf-8')
 
-    end = datetime.now()            # Data e hora de finalização da chamada.
-
     # Fechamento da stream.
 
     stream.stop_stream()
